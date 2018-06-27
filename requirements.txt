@@ -1,5 +1,3 @@
 pyTelegramBotAPI==3.6.3
-
 python-telegram==0.6.1
-
 telegram==0.0.1
