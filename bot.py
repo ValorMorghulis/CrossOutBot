@@ -3,7 +3,7 @@ from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 updater = Updater(token='575993431:AAGeenfDy2sqHNc0V-Upn3RFejK95D43TN8')
 dispatcher = updater.dispatcher
-cross_icon = "http://images.vfl.ru/ii/1530206607/90b8d0b7/22286199.png"
+cross_icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA9bXT6WSsuZ6ZTU6_D8ZHMMYgx-9ciDoIPTNiWwk4z-CaOkXW"
 
 
 def strike(text):
