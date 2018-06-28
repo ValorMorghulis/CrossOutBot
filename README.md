@@ -1,3 +1,3 @@
 "# CrossOutBot" 
 inline telegram bot 
-cross out text in ~text~ symbols
+cross out text in tilde symbols
