@@ -3,7 +3,7 @@ from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 updater = Updater(token='575993431:AAGeenfDy2sqHNc0V-Upn3RFejK95D43TN8')
 dispatcher = updater.dispatcher
-cross_icon = "https://png.icons8.com/wired/2x/cancel.png"
+cross_icon = "https://image.ibb.co/eGk40T/images.png"
 
 
 def strike(text):
@@ -34,7 +34,7 @@ def inline_cross(bot, update):
     results.append(
         InlineQueryResultArticle(
             id=query,
-            title='Зачеркнуть', font_size=14,
+            title='Зачеркнуть' + "\n" + str(ncross_out(query)), font_size=14,
             input_message_content=InputTextMessageContent(cross_out(query)),
             thumb_url=cross_icon, thumb_width=24, thumb_height=24
 
