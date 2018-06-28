@@ -9,7 +9,7 @@ cross_icon = "http://images.vfl.ru/ii/1530208114/c3634acc/22286620.png"
 def strike(text):
     result = ''
     for c in text:
-        result = result + '\u0336' + c + '\u0336'
+        result = result +  c + '\u0336'
     return result
 
 
@@ -18,7 +18,7 @@ def cross_out(text):
     for word in text.split(' '):
         if word[0] == '~' and word[-1] == '~':
             word = word[1:-1]
-            output = output + strike(word) + '  '
+            output = output + strike(word) 
         else:
             output = output + word + ' '
     return output
@@ -35,7 +35,7 @@ def inline_cross(bot, update):
         InlineQueryResultArticle(
             id=query,
             title='Зачеркнуть',
-            input_message_content=InputTextMessageContent(cross_out(query)),
+            input_message_content=InputTextMessageContent(cross_out(query.split(' ')),
             thumb_url=cross_icon, thumb_width=48, thumb_height=48
 
         )
