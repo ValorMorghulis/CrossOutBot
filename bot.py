@@ -34,9 +34,9 @@ def inline_cross(bot, update):
     results.append(
         InlineQueryResultArticle(
             id=query,
-            title='    Зачеркнуть', font_size=24,
+            title='Зачеркнуть',
             input_message_content=InputTextMessageContent(cross_out(query)),
-            thumb_url=cross_icon, thumb_width=24, thumb_height=24
+            thumb_url=cross_icon
 
         )
     )
