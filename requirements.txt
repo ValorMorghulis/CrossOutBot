@@ -1,5 +1,5 @@
-telegram-bot = 0.1
-python-telegram-bot = 10.1.0
+telegram-bot==0.1
+python-telegram-bot==10.1.0
 pyTelegramBotAPI==3.6.3
 python-telegram==0.6.1
 telegram==0.0.1
