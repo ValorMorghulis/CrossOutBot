@@ -1,1 +1,1 @@
-bot: python crossbot.py
+bot: python bot.py
