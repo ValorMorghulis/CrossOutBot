@@ -3,31 +3,44 @@ from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 updater = Updater(token='575993431:AAGeenfDy2sqHNc0V-Upn3RFejK95D43TN8')
 dispatcher = updater.dispatcher
-
-cross_icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyYYkxtmc2xOm4oP0UTlXpRCWDshPKzDUWYuwSxXnPO06RUl4nDw"
+cross_icon = "http://freevector.co/wp-content/uploads/2012/10/23224-cross-mark-outline1.png"
 
 
 def strike(text):
     result = ''
     for c in text:
-        result = result + c + '\u0336'
+        result = result + '\u0336' + c + '\u0336'
     return result
+
+
+def cross_out(text):
+    output = ''
+    for word in text.split(' '):
+        if word[0] == '~' and word[-1] == '~':
+            word = word[1:-1]
+            output = output + ' ' + strike(word) + '  '
+        else:
+            output = output + word + ' '
+    return output
 
 
 def inline_cross(bot, update):
     query = update.inline_query.query
+
     if not query:
         return
     results = list()
+
     results.append(
         InlineQueryResultArticle(
             id=query,
-            title='зачеркнуть',
-            input_message_content=InputTextMessageContent(strike(query)),
+            title='Зачеркнуть', font_size=24,
+            input_message_content=InputTextMessageContent(cross_out(query)),
             thumb_url=cross_icon, thumb_width=48, thumb_height=48
 
         )
     )
+
     bot.answer_inline_query(update.inline_query.id, results)
 
 
