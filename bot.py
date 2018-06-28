@@ -18,7 +18,7 @@ def cross_out(text):
     for word in text.split(' '):
         if word[0] == '~' and word[-1] == '~':
             word = word[1:-1]
-            output = output + ' ' + strike(word) + '  '
+            output = output + strike(word) + '  '
         else:
             output = output + word + ' '
     return output
