@@ -1,4 +1,4 @@
-from telegram.ext import Updater, InlineQueryHandler
+from telegram.ext import Updater, InlineQueryHandler, TypeHandler
 from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 updater = Updater(token='575993431:AAGeenfDy2sqHNc0V-Upn3RFejK95D43TN8')
@@ -36,7 +36,7 @@ def inline_cross(bot, update):
             id=query,
             title='Зачеркнуть', font_size=24,
             input_message_content=InputTextMessageContent(cross_out(query)),
-            thumb_url=cross_icon, thumb_width=48, thumb_height=48
+            thumb_url=cross_icon, thumb_width=28, thumb_height=28
 
         )
     )
