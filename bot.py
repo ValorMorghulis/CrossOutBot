@@ -14,11 +14,21 @@ def strike(text):
 
 
 def cross_out(text):
+    tilde = '~'
     output = ''
-    for word in text.split(' '):
-        if word[0] == '~' and word[-1] == '~':
+    for word in text.split():
+        if word[0] == tilde and word[-1] == tilde:
             word = word[1:-1]
             output = output + strike(word) + ' '
+        elif word[0] == tilde and word[-1] != tilde:
+            seq = ''
+            y = text.find(tilde)
+            z = text.find(tilde, y + 1)
+            seq = seq + strike(text[y + 1:z])
+            output = output + seq + ' '
+        elif word[-1] == tilde:
+            None
+
         else:
             output = output + word + ' '
     return output
