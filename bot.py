@@ -1,4 +1,4 @@
-from telegram.ext import Updater, InlineQueryHandler, TypeHandler
+from telegram.ext import Updater, InlineQueryHandler
 from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 updater = Updater(token='575993431:AAGeenfDy2sqHNc0V-Upn3RFejK95D43TN8')
@@ -9,7 +9,7 @@ cross_icon = "http://images.vfl.ru/ii/1530208114/c3634acc/22286620.png"
 def strike(text):
     result = ''
     for c in text:
-        result = result +  c + '\u0336'
+        result = result + c + '\u0336'
     return result
 
 
@@ -28,7 +28,6 @@ def cross_out(text):
             output = output + seq + ' '
         elif word[-1] == tilde:
             None
-
         else:
             output = output + word + ' '
     return output
@@ -39,9 +38,9 @@ def inline_cross(bot, update):
 
     if not query:
         return
-    results = list()
+    results = ' '
 
-    results.append(
+    results.join(
         InlineQueryResultArticle(
             id=query,
             title='Зачеркнуть',
