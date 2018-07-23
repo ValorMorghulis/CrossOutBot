@@ -28,9 +28,12 @@ def cross_out(text):
             seq = seq + strike(text[y + 1:z])
             output = output + seq + ' '
         elif word[-1] == tilde:
-            pass
+            continue
+        elif strike(word) in output:
+            continue
         else:
             output = output + word + ' '
+
     return output
 
 
