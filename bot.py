@@ -1,7 +1,7 @@
 from telegram.ext import Updater, InlineQueryHandler
 from telegram import InlineQueryResultArticle, InputTextMessageContent
 
-updater = Updater(token='575993431:AAGeenfDy2sqHNc0V-Upn3RFejK95D43TN8')
+updater = Updater(token='YOUR TOKEN HERE')
 
 dispatcher = updater.dispatcher
 cross_icon = "http://images.vfl.ru/ii/1530208114/c3634acc/22286620.png"
